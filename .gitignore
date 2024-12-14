@@ -1,0 +1,8 @@
+# General
+__pycache__
+.DS_Store
+
+# PROJECT FILES
+**.dot
+**.png
+models/Llama-3.2-3B-Instruct
