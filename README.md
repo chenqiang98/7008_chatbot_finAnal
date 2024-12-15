@@ -14,9 +14,11 @@ The Loan Enquiry and Credit Risk Analysis Chatbot is a PyQt5-based application d
     ```
 
 2. **Download the model**: Download our 3 models in the model_link.txt, and place them in correct path:
+   ```
    ./bert-en/pytorch_model.bin
    ./models/Llama-3.2-1B-Instruct/model.safetensors
    ./selected_epoch.pth
+   ```
 
 3. **Run the Application**: Execute the `chatbot.py` file to start the chatbot application.
     ```sh
