@@ -4,5 +4,4 @@ __pycache__
 
 # PROJECT FILES
 **.dot
-**.png
 models/Llama-3.2-3B-Instruct
