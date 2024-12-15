@@ -6,6 +6,50 @@ This project is a chatbot application designed to assist users with loan enquiri
 
 The Loan Enquiry and Credit Risk Analysis Chatbot is a PyQt5-based application designed to assist users with loan enquiries and credit risk analysis. The chatbot interacts with users through a series of questions to gather necessary information, analyze the data using pre-trained models, and provide insights on loan eligibility and credit risk. The application leverages BERT for sentiment analysis and a custom machine learning model for loan status prediction.
 
+## Usage Instructions
+
+1. **Install Dependencies**: Ensure you have Python and the required libraries installed. You can install the dependencies using the following command:
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+2. **Download the model**: Download our 3 models in the model_link.txt, and place them in correct path:
+   ./bert-en/pytorch_model.bin
+   ./models/Llama-3.2-1B-Instruct/model.safetensors
+   ./selected_epoch.pth
+
+3. **Run the Application**: Execute the `chatbot.py` file to start the chatbot application.
+    ```sh
+    python chatbot.py
+    ```
+
+4. **Interact with the Chatbot**: The chatbot will guide you through a series of questions to gather information about your loan application and credit status. Respond to the chatbot's prompts to receive insights and predictions.
+
+5. **Analyze Results**: The chatbot will analyze your inputs and provide a final report on your loan eligibility and credit risk.
+
+## Example Interaction
+
+```
+Bot: Hello! How are you today?
+Bot: I'm your consultant on loan enquiry and credit risk analysis.
+Bot: Let's start by discussing your reasons for loan application.
+You: I need a loan to buy a new car.
+Bot: Your reason is positive.
+Bot: Let's move on to other information.
+Bot: Please input your grade (From A to G).
+You: A
+Bot: Please input your employer's name.
+You: XYZ Corp
+...
+Bot: I'm analyzing your loan status.
+Bot: Please wait for a moment.
+Bot: Your credit risk is low.
+Bot: I'm ready to give you a final report on loan and credit risk.
+Bot: Please type 'report' to get the report.
+You: report
+Bot: Here's your final report on loan and credit risk.
+```
+
 ## File Structure
 
 ```
@@ -15,8 +59,9 @@ The Loan Enquiry and Credit Risk Analysis Chatbot is a PyQt5-based application d
 ├── bert-en/
 │   ├── config.json
 │   ├── vocab.txt
+│   ├── **pytorch_model.bin(download by model_link.txt)**
 ├── chatbot.py
-├── classes_chatbot_finAnal.dot
+├── classes_chatbot_finAnal.png
 ├── dataProcessor.py
 ├── dataset.py
 ├── diagrams/
@@ -31,13 +76,14 @@ The Loan Enquiry and Credit Risk Analysis Chatbot is a PyQt5-based application d
 │   │   ├── .gitattributes
 │   │   ├── config.json
 │   │   ├── generation_config.json
-│   │   ├── model.safetensors
+│   │   ├── **model.safetensors(download by model_link.txt)**
 │   │   ├── README.md
 │   ├── Llama-3.2-3B-Instruct/
-├── packages_chatbot_finAnal.dot
+├── packages_chatbot_finAnal.png
 ├── predict_loan_status.py
-├── selected_epoch.pth
+├── **selected_epoch.pth(download by model_link.txt)**
 ├── sentiment_analysis.py
+├── README.md
 ```
 
 ## File Descriptions
@@ -70,43 +116,3 @@ The Loan Enquiry and Credit Risk Analysis Chatbot is a PyQt5-based application d
 - `predict_loan_status.py`: Contains functions for predicting loan status based on user input.
 - `selected_epoch.pth`: Pre-trained model weights file.
 - `sentiment_analysis.py`: Contains functions for performing sentiment analysis on user input.
-
-
-## Usage Instructions
-
-1. **Install Dependencies**: Ensure you have Python and the required libraries installed. You can install the dependencies using the following command:
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-2. **Run the Application**: Execute the `chatbot.py` file to start the chatbot application.
-    ```sh
-    python chatbot.py
-    ```
-
-3. **Interact with the Chatbot**: The chatbot will guide you through a series of questions to gather information about your loan application and credit status. Respond to the chatbot's prompts to receive insights and predictions.
-
-4. **Analyze Results**: The chatbot will analyze your inputs and provide a final report on your loan eligibility and credit risk.
-
-## Example Interaction
-
-```
-Bot: Hello! How are you today?
-Bot: I'm your consultant on loan enquiry and credit risk analysis.
-Bot: Let's start by discussing your reasons for loan application.
-You: I need a loan to buy a new car.
-Bot: Your reason is positive.
-Bot: Let's move on to other information.
-Bot: Please input your grade (From A to G).
-You: A
-Bot: Please input your employer's name.
-You: XYZ Corp
-...
-Bot: I'm analyzing your loan status.
-Bot: Please wait for a moment.
-Bot: Your credit risk is low.
-Bot: I'm ready to give you a final report on loan and credit risk.
-Bot: Please type 'report' to get the report.
-You: report
-Bot: Here's your final report on loan and credit risk.
-```
